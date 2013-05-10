@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textView_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_title"
+        android:layout_centerHorizontal="true"
+        android:text="@string/description"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/textView_birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_description"
+        android:layout_centerHorizontal="true"
+        android:text="@string/birthday"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_birthday"
+        android:layout_centerHorizontal="true" >
+
+        <EditText
+            android:id="@+id/editText_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="5"
+            android:inputType="number" >
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/separator" />
+
+        <EditText
+            android:id="@+id/editText_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:inputType="number" >
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/separator" />
+
+        <EditText
+            android:id="@+id/editText_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:inputType="number" >
+        </EditText>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bloodtyte"
+        	android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Spinner
+            android:id="@+id/spinner_bloodtyte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/bloodtytes" />
+        
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/linearLayout2"
+        android:onClick="onClickOkButton"
+        android:text="@string/button_telling"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+</RelativeLayout>

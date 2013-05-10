@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">バーナム占い</string>
+    <string name="title">バーナム占い</string>
+    <string name="description">アメリカの心理学者バートラム・フォアが、性格について心理検査を実施し、その検査の結果に基づく分析を行い、考案した星占いを参考にしています。</string>
+    <string name="birthday">生年月日</string>
+    <string name="separator">/</string>
+    <string name="bloodtyte">血液型</string>
+    <string-array name="bloodtytes">
+        <item >A</item>
+        <item >B</item>
+        <item >O</item>
+        <item >AB</item>
+    </string-array>
+    <string name="button_telling">占う</string>
+    <string name="alert_title">警告</string>
+    <string name="alert_message">生年月日を入力してください</string>
+    <string name="button_true">正確</string>
+    <string name="button_false">異なる</string>
+    <string name="button_ok">OK</string>
+    <string name="help">このアプリは、占いではなく心理学のバーナム効果の実験をするアプリです。\n
+バーナム効果とは、エセ占い師や霊媒師などが使う心理操作の一つです。\n
+表示している文章は、生年月日等は一切関係なく、適当に文章を表示しています。\n
+アメリカの心理学者バートラム・フォアが実施した、バーナム効果の実験を基に作成しました。\n
+※バーナム効果とは、誰にでも該当するような曖昧で一般的な性格をあらわす記述を、自分だけに当てはまる正確なものだと捉えてしまう心理学の現象。
+「あなたはロマンチストな面を持っています」「あなたは快活に振舞っていても心の中で不安を抱えている事があります」といった診断を被験者に与えた場合、被験者の多くが自分の診断は適切なものだと感じてしまうが、この現象を「バーナム効果」と呼んでいる。\n
+出典:WikiPedia</string>
+    <string name="percent">現在%d％の人が結果が当たっていると答えました</string>
+
+</resources>
