@@ -12,8 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textSize="@dimen/textSize_result" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -21,23 +20,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView_result"
         android:layout_centerHorizontal="true" >
-        
-    <Button
-        android:id="@+id/button_true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickTrueButton"
-        android:text="@string/button_true"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-        
-    <Button
-        android:id="@+id/button_false"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickFalseButton"
-        android:text="@string/button_false"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-    
+
+        <Button
+            android:id="@+id/button_true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickTrueButton"
+            android:text="@string/button_true"
+            android:textSize="@dimen/button_result" />
+
+        <Button
+            android:id="@+id/button_false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickFalseButton"
+            android:text="@string/button_false"
+            android:textSize="@dimen/button_result" />
     </LinearLayout>
-    
+
 </RelativeLayout>

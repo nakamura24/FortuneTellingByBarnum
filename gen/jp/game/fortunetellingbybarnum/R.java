@@ -15,34 +15,41 @@ public final class R {
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
-
-         Customize dimensions originally defined in res/values/dimens.xml (such as
-         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
-    
          */
         public static final int activity_horizontal_margin=0x7f040000;
         public static final int activity_vertical_margin=0x7f040001;
+        public static final int button_result=0x7f040009;
+        public static final int textSize_birthday=0x7f040004;
+        public static final int textSize_bloodtyte=0x7f040006;
+        public static final int textSize_description=0x7f040003;
+        public static final int textSize_help=0x7f04000a;
+        public static final int textSize_percent=0x7f04000b;
+        public static final int textSize_result=0x7f040008;
+        public static final int textSize_separator=0x7f040005;
+        public static final int textSize_telling=0x7f040007;
+        public static final int textSize_title=0x7f040002;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int button1=0x7f080002;
-        public static final int button_false=0x7f08000f;
-        public static final int button_ok=0x7f08000c;
-        public static final int button_true=0x7f08000e;
-        public static final int editText_day=0x7f080009;
+        public static final int button_false=0x7f080010;
+        public static final int button_true=0x7f08000f;
+        public static final int editText_day=0x7f08000a;
         public static final int editText_month=0x7f080008;
-        public static final int editText_year=0x7f080007;
-        public static final int linearLayout1=0x7f080006;
-        public static final int linearLayout2=0x7f08000a;
-        public static final int spinner_bloodtyte=0x7f08000b;
-        public static final int textView_birthday=0x7f080005;
-        public static final int textView_description=0x7f080004;
+        public static final int editText_year=0x7f080006;
+        public static final int linearLayout1=0x7f080005;
+        public static final int linearLayout2=0x7f08000b;
+        public static final int spinner_bloodtyte=0x7f08000d;
+        public static final int textView_birthday=0x7f080004;
+        public static final int textView_bloodtyte=0x7f08000c;
+        public static final int textView_description=0x7f080003;
         public static final int textView_help=0x7f080000;
         public static final int textView_percent=0x7f080001;
-        public static final int textView_result=0x7f08000d;
-        public static final int textView_title=0x7f080003;
+        public static final int textView_result=0x7f08000e;
+        public static final int textView_separator1=0x7f080007;
+        public static final int textView_separator2=0x7f080009;
+        public static final int textView_title=0x7f080002;
     }
     public static final class layout {
         public static final int activity_help=0x7f030000;

@@ -23,9 +23,9 @@ public class HelpActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		Log.i(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 		try {
-			Log.i(TAG, "onCreate");
 			setContentView(R.layout.activity_help);
 			
 			SharedPreferences sharedPreferences = PreferenceManager
@@ -43,8 +43,8 @@ public class HelpActivity extends Activity {
 	}
 
 	public void onClickOkButton(View view) {
+		Log.i(TAG, "onClickOkButton");
 		try {
-			Log.i(TAG, "onClickOkButton");
 			// 画面の終了
 			Intent intent = new Intent();
 			setResult(RESULT_OK, intent);

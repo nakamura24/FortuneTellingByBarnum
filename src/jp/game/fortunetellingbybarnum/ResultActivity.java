@@ -23,32 +23,31 @@ import android.widget.TextView;
 public class ResultActivity extends Activity {
 	private static final String TAG = "ResultActivity";
 	private static final String[] result1 = {
-		"あなたは他人から好かれたい、ほめて欲しいと思ってますが、それにかかわらず自分を批判する傾向にあります。",
-		"あなたは外向的・社交的で愛想がよいときもありますが、その一方で内向的で用心深く遠慮がちなときもあります。",
-		"あなたはある程度の変化や多様性を好み、制約や制限があるときには不満を抱きます。",
-		"あなたの願望にはやや非現実的な傾向のものもあります。",
-		"あなたは使われず生かしきれていない才能をかなり持っています。", };
+			"あなたは他人から好かれたい、ほめて欲しいと思ってますが、それにかかわらず自分を批判する傾向にあります。\n",
+			"あなたは外向的・社交的で愛想がよいときもありますが、その一方で内向的で用心深く遠慮がちなときもあります。\n",
+			"あなたはある程度の変化や多様性を好み、制約や制限があるときには不満を抱きます。\n",
+			"あなたの願望にはやや非現実的な傾向のものもあります。\n", "あなたは使われず生かしきれていない才能をかなり持っています。\n", };
 	private static final String[] result2 = {
-		"はたから見た場合、規律正しく自制的ですが、内心ではくよくよしたり不安になる傾向があります。",
-		"正しい判断や正しい行動をしたのかどうか真剣な疑問を持つときがあります。",
-		"そのうえ、あなたは独自の考えを持っていることを誇りに思い、十分な根拠もない他人の意見を聞き入れることはありません。",
-		"しかし、あなたは他人に自分のことをさらけ出しすぎるのも賢明でないことにも気付いています。",
-		"また、あなたは凹むようなことがあっても、それを克服することができます。", };
+			"はたから見た場合、規律正しく自制的ですが、内心ではくよくよしたり不安になる傾向があります。\n",
+			"正しい判断や正しい行動をしたのかどうか真剣な疑問を持つときがあります。\n",
+			"そのうえ、あなたは独自の考えを持っていることを誇りに思い、十分な根拠もない他人の意見を聞き入れることはありません。\n",
+			"しかし、あなたは他人に自分のことをさらけ出しすぎるのも賢明でないことにも気付いています。\n",
+			"また、あなたは凹むようなことがあっても、それを克服することができます。\n", };
 	private static Random randam = new Random();
 	public static final int ACTIVITY_HELP = 0x0003;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		Log.i(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 		try {
-			Log.i(TAG, "onCreate");
 			setContentView(R.layout.activity_result);
 
 			String result = "";
 			int randold = -1;
 			for (int i = 0; i < 2;) {
 				int rand = randam.nextInt(5);
-				if(randold != rand){
+				if (randold != rand) {
 					result += result1[rand];
 					randold = rand;
 					i++;
@@ -57,7 +56,7 @@ public class ResultActivity extends Activity {
 			randold = -1;
 			for (int i = 0; i < 2;) {
 				int rand = randam.nextInt(5);
-				if(randold != rand){
+				if (randold != rand) {
 					result += result2[rand];
 					randold = rand;
 					i++;
@@ -65,12 +64,6 @@ public class ResultActivity extends Activity {
 			}
 			TextView textView_result = (TextView) findViewById(R.id.textView_result);
 			textView_result.setText(result);
-			SharedPreferences sharedPreferences = PreferenceManager
-					.getDefaultSharedPreferences(this.getApplicationContext());
-			int total = sharedPreferences.getInt("Total", 0);
-			Editor editer = sharedPreferences.edit();
-			editer.putInt("Total", ++total);
-			editer.commit();
 		} catch (Exception e) {
 			Log.e(TAG, e.getMessage());
 		}
@@ -79,30 +72,42 @@ public class ResultActivity extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.i(TAG, "onActivityResult");
-		Intent intent = new Intent();
-		setResult(RESULT_OK, intent);
-		finish();
+		try {
+			Intent intent = new Intent();
+			setResult(RESULT_OK, intent);
+			finish();
+		} catch (Exception e) {
+			Log.e(TAG, e.getMessage());
+		}
 	}
 
 	public void onClickTrueButton(View view) {
+		Log.i(TAG, "onClickTrueButton");
 		try {
-			Log.i(TAG, "onClickTrueButton");
-			Intent intent = new Intent(this, HelpActivity.class);
-			startActivityForResult(intent, ACTIVITY_HELP);
 			SharedPreferences sharedPreferences = PreferenceManager
 					.getDefaultSharedPreferences(this.getApplicationContext());
+			int total = sharedPreferences.getInt("Total", 0);
 			int believed = sharedPreferences.getInt("Believed", 0);
 			Editor editer = sharedPreferences.edit();
+			editer.putInt("Total", ++total);
 			editer.putInt("Believed", ++believed);
 			editer.commit();
+			Intent intent = new Intent(this, HelpActivity.class);
+			startActivityForResult(intent, ACTIVITY_HELP);
 		} catch (Exception e) {
 			Log.e(TAG, e.getMessage());
 		}
 	}
 
 	public void onClickFalseButton(View view) {
+		Log.i(TAG, "onClickFalseButton");
 		try {
-			Log.i(TAG, "onClickFalseButton");
+			SharedPreferences sharedPreferences = PreferenceManager
+					.getDefaultSharedPreferences(this.getApplicationContext());
+			int total = sharedPreferences.getInt("Total", 0);
+			Editor editer = sharedPreferences.edit();
+			editer.putInt("Total", ++total);
+			editer.commit();
 			Intent intent = new Intent();
 			setResult(RESULT_OK, intent);
 			finish();

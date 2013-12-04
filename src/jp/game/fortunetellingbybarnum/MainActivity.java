@@ -22,9 +22,9 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		Log.i(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 		try {
-			Log.i(TAG, "onCreate");
 			setContentView(R.layout.activity_main);
 		} catch (Exception e) {
 			Log.e(TAG, e.getMessage());
@@ -34,17 +34,21 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.i(TAG, "onActivityResult");
-		EditText editText_year = (EditText) findViewById(R.id.editText_year);
-		EditText editText_month = (EditText) findViewById(R.id.editText_month);
-		EditText editText_day = (EditText) findViewById(R.id.editText_day);
-		editText_year.getText().clear();
-		editText_month.getText().clear();
-		editText_day.getText().clear();
+		try {
+			EditText editText_year = (EditText) findViewById(R.id.editText_year);
+			EditText editText_month = (EditText) findViewById(R.id.editText_month);
+			EditText editText_day = (EditText) findViewById(R.id.editText_day);
+			editText_year.getText().clear();
+			editText_month.getText().clear();
+			editText_day.getText().clear();
+		} catch (Exception e) {
+			Log.e(TAG, e.getMessage());
+		}
 	}
 
 	public void onClickOkButton(View view) {
+		Log.i(TAG, "onClickOkButton");
 		try {
-			Log.i(TAG, "onClickOkButton");
 			EditText editText_year = (EditText) findViewById(R.id.editText_year);
 			EditText editText_month = (EditText) findViewById(R.id.editText_month);
 			EditText editText_day = (EditText) findViewById(R.id.editText_day);
@@ -63,8 +67,8 @@ public class MainActivity extends Activity {
 
 	// 警告ダイアログ
 	private void alertDialog() {
+		Log.i(TAG, "alertDialog");
 		try {
-			Log.i(TAG, "alertDialog");
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
 					this);
 			// アラートダイアログのタイトルを設定します
