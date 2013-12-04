@@ -8,6 +8,7 @@
  */
 package jp.game.fortunetellingbybarnum;
 
+import static jp.game.fortunetellingbybarnum.Constant.*;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +19,6 @@ import android.content.Intent;
 
 public class MainActivity extends Activity {
 	private static final String TAG = "MainActivity";
-	public static final int ACTIVITY_RESULT = 0x0001;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -8,12 +8,14 @@
  */
 package jp.game.fortunetellingbybarnum;
 
+import static jp.game.fortunetellingbybarnum.Constant.*;
 import java.util.Random;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -22,19 +24,6 @@ import android.widget.TextView;
 
 public class ResultActivity extends Activity {
 	private static final String TAG = "ResultActivity";
-	private static final String[] result1 = {
-			"あなたは他人から好かれたい、ほめて欲しいと思ってますが、それにかかわらず自分を批判する傾向にあります。\n",
-			"あなたは外向的・社交的で愛想がよいときもありますが、その一方で内向的で用心深く遠慮がちなときもあります。\n",
-			"あなたはある程度の変化や多様性を好み、制約や制限があるときには不満を抱きます。\n",
-			"あなたの願望にはやや非現実的な傾向のものもあります。\n", "あなたは使われず生かしきれていない才能をかなり持っています。\n", };
-	private static final String[] result2 = {
-			"はたから見た場合、規律正しく自制的ですが、内心ではくよくよしたり不安になる傾向があります。\n",
-			"正しい判断や正しい行動をしたのかどうか真剣な疑問を持つときがあります。\n",
-			"そのうえ、あなたは独自の考えを持っていることを誇りに思い、十分な根拠もない他人の意見を聞き入れることはありません。\n",
-			"しかし、あなたは他人に自分のことをさらけ出しすぎるのも賢明でないことにも気付いています。\n",
-			"また、あなたは凹むようなことがあっても、それを克服することができます。\n", };
-	private static Random randam = new Random();
-	public static final int ACTIVITY_HELP = 0x0003;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,25 +32,25 @@ public class ResultActivity extends Activity {
 		try {
 			setContentView(R.layout.activity_result);
 
+			Resources resource = getResources();
+			String[] results = resource.getStringArray(R.array.results);
+			String[] astrology = resource.getStringArray(R.array.astrology);
+			String[] bloodtytes = resource.getStringArray(R.array.bloodtytes);
+			String message = resource.getString(R.string.message);
+			boolean[] useds = new boolean[results.length];
 			String result = "";
-			int randold = -1;
-			for (int i = 0; i < 2;) {
-				int rand = randam.nextInt(5);
-				if (randold != rand) {
-					result += result1[rand];
-					randold = rand;
+			Random randam = new Random();
+			for (int i = 0; i < 5;) {
+				int rand = randam.nextInt(results.length);
+				if (!useds[rand]) {
+					result += results[rand];
+					useds[rand] = true;
 					i++;
 				}
 			}
-			randold = -1;
-			for (int i = 0; i < 2;) {
-				int rand = randam.nextInt(5);
-				if (randold != rand) {
-					result += result2[rand];
-					randold = rand;
-					i++;
-				}
-			}
+			result += astrology[randam.nextInt(astrology.length)]
+					+ String.format(message,
+							bloodtytes[randam.nextInt(bloodtytes.length)]);
 			TextView textView_result = (TextView) findViewById(R.id.textView_result);
 			textView_result.setText(result);
 		} catch (Exception e) {

@@ -7,15 +7,46 @@
     <string name="birthday">生年月日</string>
     <string name="separator">/</string>
     <string name="bloodtyte">血液型</string>
+
     <string-array name="bloodtytes">
-        <item >A</item>
-        <item >B</item>
-        <item >O</item>
-        <item >AB</item>
+        <item>Ａ型</item>
+        <item>Ｂ型</item>
+        <item>Ｏ型</item>
+        <item>ＡＢ型</item>
     </string-array>
+
     <string name="button_telling">占う</string>
     <string name="alert_title">警告</string>
     <string name="alert_message">生年月日を入力してください</string>
+
+    <string-array name="results">
+        <item>他人から好かれたい、ほめて欲しいと思ってますが、それにかかわらず自分を批判する傾向にあります。\n</item>
+        <item>外向的・社交的で愛想がよいときもありますが、その一方で内向的で用心深く遠慮がちなときもあります。\n</item>
+        <item>ある程度の変化や多様性を好み、制約や制限があるときには不満を抱きます。\n</item>
+        <item>あなたの願望にはやや非現実的な傾向のものもあります。\n</item>
+        <item>使われず生かしきれていない才能をかなり持っています。\n</item>
+        <item>はたから見た場合、規律正しく自制的ですが、内心ではくよくよしたり不安になる傾向があります。\n</item>
+        <item>正しい判断や正しい行動をしたのかどうか真剣な疑問を持つときがあります。\n</item>
+        <item>独自の考えを持っていることを誇りに思い、十分な根拠もない他人の意見を聞き入れることはありません。\n</item>
+        <item>他人に自分のことをさらけ出しすぎるのも賢明でないことにも気付いています。\n</item>
+        <item>凹むようなことがあっても、それを克服することができます。\n</item>
+    </string-array>
+    <string-array name="astrology">
+        <item>牡羊座</item>
+        <item>牡牛座</item>
+        <item>双子座</item>
+        <item>蟹座</item>
+        <item>獅子座</item>
+        <item>乙女座</item>
+        <item>天秤座</item>
+        <item>蠍座</item>
+        <item>射手座</item>
+        <item>山羊座</item>
+        <item>水瓶座</item>
+        <item>魚座</item>
+    </string-array>
+    <string name="message">の%sとの相性が良いです</string>
+    
     <string name="button_true">正確</string>
     <string name="button_false">異なる</string>
     <string name="button_ok">OK</string>
@@ -27,5 +58,4 @@
 「あなたはロマンチストな面を持っています」「あなたは快活に振舞っていても心の中で不安を抱えている事があります」といった診断を被験者に与えた場合、被験者の多くが自分の診断は適切なものだと感じてしまうが、この現象を「バーナム効果」と呼んでいる。\n
 出典:WikiPedia</string>
     <string name="percent">現在%d％の人が結果が当たっていると答えました</string>
-
-</resources>
+</resources>

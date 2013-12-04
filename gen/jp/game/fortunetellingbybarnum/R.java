@@ -9,7 +9,9 @@ package jp.game.fortunetellingbybarnum;
 
 public final class R {
     public static final class array {
+        public static final int astrology=0x7f060002;
         public static final int bloodtytes=0x7f060000;
+        public static final int results=0x7f060001;
     }
     public static final class attr {
     }
@@ -62,13 +64,14 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int birthday=0x7f050003;
         public static final int bloodtyte=0x7f050005;
-        public static final int button_false=0x7f05000a;
-        public static final int button_ok=0x7f05000b;
+        public static final int button_false=0x7f05000b;
+        public static final int button_ok=0x7f05000c;
         public static final int button_telling=0x7f050006;
-        public static final int button_true=0x7f050009;
+        public static final int button_true=0x7f05000a;
         public static final int description=0x7f050002;
-        public static final int help=0x7f05000c;
-        public static final int percent=0x7f05000d;
+        public static final int help=0x7f05000d;
+        public static final int message=0x7f050009;
+        public static final int percent=0x7f05000e;
         public static final int separator=0x7f050004;
         public static final int title=0x7f050001;
     }
